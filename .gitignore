@@ -2,3 +2,5 @@ venv/*
 song/*
 __pycache__
 .env
+*.pem
+*.zip

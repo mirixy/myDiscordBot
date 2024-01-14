@@ -5,7 +5,7 @@ import time
 
 app = Flask(__name__)
 
-audio_path = './output.txt'
+audio_path = '/home/dev/transmitter/output.txt'
 last_request_time = 0
 
 
@@ -30,7 +30,7 @@ def receive_text():
             last_request_time = time.time()
             return send_file(audio_path, as_attachment=True)
         else:
-            return 'Audio file not updated', 304
+            return "Audio file not updated", 304
     else:
         return 'Audio file not found on the server', 404
 
