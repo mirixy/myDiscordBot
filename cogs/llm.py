@@ -4,6 +4,9 @@ import asyncio
 import json
 import aiohttp
 import os
+from dotenv import load_dotenv
+load_dotenv()
+URL = os.getenv("URL")
 
 
 class LLM(commands.Cog):
@@ -35,7 +38,7 @@ class LLM(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):      
         headers = {"Content-Type": "application/json"}
-        API_URL = "http://llama.mirixy.duckdns.org:7000/v1/chat/completions"
+        API_URL = f"https://{URL}/v1/chat/completions"
         #payload = {
           #      "max_tokens": 512,
            #     "messages": []
